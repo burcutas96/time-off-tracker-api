@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time-Off-Tracker.API", "Time-Off-Tracker.API\Time-Off-Tracker.API.csproj", "{3F4F26F6-F8EF-4D96-AAFC-E30F676DEFE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time-Off-Tracker.Entity", "Time-Off-Tracker.Entity\Time-Off-Tracker.Entity.csproj", "{367821D9-134E-45B0-B079-D3D9283E6341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time-Off-Tracker.DAL", "Time-Off-Tracker.DAL\Time-Off-Tracker.DAL.csproj", "{3F9ABCAF-356B-4997-8870-93E826BF5881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time-Off-Tracker.Business", "Time-Off-Tracker.Business\Time-Off-Tracker.Business.csproj", "{6B9AAB27-2895-4A21-BED2-7638090E3CEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time-Off-Tracker.DTO", "Time-Off-Tracker.DTO\Time-Off-Tracker.DTO.csproj", "{69B27E5D-4819-4C90-A47B-05CA29A76E68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notion", "Notion", "{B255441B-5B9E-4345-A15E-BBF9D19EB623}"
+	ProjectSection(SolutionItems) = preProject
+		todo.txt = todo.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F4F26F6-F8EF-4D96-AAFC-E30F676DEFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4F26F6-F8EF-4D96-AAFC-E30F676DEFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4F26F6-F8EF-4D96-AAFC-E30F676DEFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4F26F6-F8EF-4D96-AAFC-E30F676DEFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367821D9-134E-45B0-B079-D3D9283E6341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367821D9-134E-45B0-B079-D3D9283E6341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367821D9-134E-45B0-B079-D3D9283E6341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367821D9-134E-45B0-B079-D3D9283E6341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9ABCAF-356B-4997-8870-93E826BF5881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9ABCAF-356B-4997-8870-93E826BF5881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9ABCAF-356B-4997-8870-93E826BF5881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9ABCAF-356B-4997-8870-93E826BF5881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9AAB27-2895-4A21-BED2-7638090E3CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9AAB27-2895-4A21-BED2-7638090E3CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9AAB27-2895-4A21-BED2-7638090E3CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9AAB27-2895-4A21-BED2-7638090E3CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B27E5D-4819-4C90-A47B-05CA29A76E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B27E5D-4819-4C90-A47B-05CA29A76E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B27E5D-4819-4C90-A47B-05CA29A76E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B27E5D-4819-4C90-A47B-05CA29A76E68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAE5352D-2F3B-479F-BD5F-185A4F7ADB44}
+	EndGlobalSection
+EndGlobal

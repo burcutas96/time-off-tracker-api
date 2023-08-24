@@ -20,8 +20,8 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpGet("{id}")]
         public IActionResult TimeOffGet(int id)
         {
-            _permissionService.SGetById(id);
-            return Ok();
+          var result=  _permissionService.SGetById(id);
+            return Ok(result);
         }
 
 
@@ -33,11 +33,21 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpDelete("delete")]
-        public IActionResult TimeOffDelete(Permission permission)
+
+        [HttpDelete("delete/{ID}")]
+        public IActionResult TimeOffDelete(int ID)
         {
-            _permissionService.SDelete(permission);
-            return Ok();
+            var resultGet = _permissionService.SGetById(ID);
+            if (resultGet == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                _permissionService.SDelete(resultGet);
+                return Ok("Kullanıcı Başarıyla Silindi!");
+            }
+
         }
 
 

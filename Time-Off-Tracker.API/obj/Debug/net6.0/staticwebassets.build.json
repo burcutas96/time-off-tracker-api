@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "sPvHn0Kw53sIvzl1WK7FoGcBrZFJv8T61UbjE7NwmFE=",
+  "Hash": "FvREv91tXsj0cwZDrs4cKvCfaT1atZfZjo0ZlMR8NRA=",
   "Source": "Time-Off-Tracker.API",
   "BasePath": "_content/Time-Off-Tracker.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Time-Off-Tracker.API\\wwwroot",
+      "Source": "Time-Off-Tracker.API",
+      "ContentRoot": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\",
+      "BasePath": "_content/Time-Off-Tracker.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\swagger.json",
+      "SourceId": "Time-Off-Tracker.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\",
+      "BasePath": "_content/Time-Off-Tracker.API",
+      "RelativePath": "swagger.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger.json"
+    }
+  ]
 }

@@ -385,3 +385,4 @@ C:\Users\ramia\OneDrive\Desktop\time-off-tracker-apiis\Time-Off-Tracker.API\obj\
 C:\Users\ramia\OneDrive\Desktop\time-off-tracker-apiis\Time-Off-Tracker.API\obj\Debug\net6.0\Time-Off-Tracker.API.pdb
 C:\Users\ramia\OneDrive\Desktop\time-off-tracker-apiis\Time-Off-Tracker.API\obj\Debug\net6.0\Time-Off-Tracker.API.genruntimeconfig.cache
 C:\Users\ramia\OneDrive\Desktop\time-off-tracker-apiis\Time-Off-Tracker.API\obj\Debug\net6.0\ref\Time-Off-Tracker.API.dll
+C:\Users\ramia\OneDrive\Desktop\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\Time-Off-Tracker.API.staticwebassets.runtime.json

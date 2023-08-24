@@ -10,10 +10,12 @@ namespace Time_Off_Tracker.API.Controllers
     public class TimeOffController : ControllerBase
     {
         private IPermissionService _permissionService;
+        private IUserService _userService;
 
-        public TimeOffController(IPermissionService permissionService)
+        public TimeOffController(IPermissionService permissionService, IUserService userService)
         {
             _permissionService = permissionService;
+            _userService = userService;
         }
 
 
@@ -62,6 +64,13 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpPost("add")]
         public IActionResult TimeOffAdd(PermissionDto permissionDto)
         {
+            var managerId = _userService.SGetById(permissionDto.ManagerId);
+            
+            if (managerId.UserRole != "Manager")
+            {
+                return BadRequest();
+            }
+
             Permission permission = new()
             {
                 EmployeID = permissionDto.EmployeeId,

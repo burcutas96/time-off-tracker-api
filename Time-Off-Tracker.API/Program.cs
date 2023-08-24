@@ -22,8 +22,9 @@ builder.Services.AddScoped<IPermissionDal, EfPermissionDal>();
 builder.Services.AddScoped<IPermissionService, PermissionManager>();
 
 builder.Services.AddCors(options =>
-    options.AddPolicy("SpesificOrigins", policy => 
-    policy.WithOrigins("http://localhost:44374") //Kendi hostunuzu yazýnýz.
+    options.AddPolicy("SpesificOrigins", policy =>
+    policy.WithOrigins("http://localhost:19006",
+    "https://time-off-tracker-api-4a95404d0134.herokuapp.com") //Kendi hostunuzu yazýnýz.
     .AllowAnyHeader())
 );
 
@@ -80,11 +81,11 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
 
 app.UseCors("SpesificOrigins");
 

@@ -190,13 +190,9 @@ C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
@@ -232,3 +228,4 @@ C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\obj\Debug\net6.0\Time-Off-Tracker.API.pdb
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\obj\Debug\net6.0\Time-Off-Tracker.API.genruntimeconfig.cache
 C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\obj\Debug\net6.0\ref\Time-Off-Tracker.API.dll
+C:\Users\HP\Desktop\time-off-tracker-api\time-off-tracker-apii\Time-Off-Tracker.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll

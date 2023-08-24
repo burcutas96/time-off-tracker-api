@@ -50,7 +50,6 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult UserList()
         {
             var values =  _userService.SGetList();

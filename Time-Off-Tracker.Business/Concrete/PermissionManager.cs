@@ -40,6 +40,7 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public void SInsert(Permission t)
         {
+            t.ID = 0;
             _permissionDal.Insert(t);
         }
 

@@ -36,6 +36,7 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public void SInsert(User t)
         {
+            t.ID = 0;
             _userDal.Insert(t);
         }
 

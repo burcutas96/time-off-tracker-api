@@ -37,8 +37,8 @@ namespace Time_Off_Tracker.API.Controllers
                 // Başarılı yanıt döndürün
 
                 // Kullanıcının veritabanında var olup olmadığını kontrol edin
-                var existingUserName = _userService.SGetByUsername(userForRegisterDto.FirstName);
-                var existingUser = _userService.SGetByEmail(userForRegisterDto.Email);
+                var existingUserName = _userService.SGetByUsername(userForRegisterDto.UserName);
+                var existingUser = _userService.SGetByEmail(userForRegisterDto.UserEmail);
                 if (existingUserName != null || existingUser != null)
                 {
                     return Conflict("Girdiğiniz kullanıcı zaten mevcut, giriş yapın!");
@@ -47,10 +47,10 @@ namespace Time_Off_Tracker.API.Controllers
 
                 User user = new()
                 {
-                    UserName = userForRegisterDto.FirstName,
-                    UserLastName = userForRegisterDto.LastName,
-                    UserEmail = userForRegisterDto.Email,
-                    UserPassword = userForRegisterDto.Password,
+                    UserName = userForRegisterDto.UserName,
+                    UserLastName = userForRegisterDto.UserLastName,
+                    UserEmail = userForRegisterDto.UserEmail,
+                    UserPassword = userForRegisterDto.UserPassword,
                     UserCreateDate = DateTime.Now,
                     UserRole = "Employee",
                     UserStatus = true
@@ -64,7 +64,7 @@ namespace Time_Off_Tracker.API.Controllers
 
                 var token = GenerateJwtToken(user);
                 return Ok(
-                    new { Message = "Kullanıcı başarıyla kaydedildi.", Token = token }
+                    new { Message = "Kullanıcı başarıyla kaydedildi." }
                 );
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
-            var users = _userService.SGetByEmail(userForLoginDto.Email);
+            var users = _userService.SGetByEmail(userForLoginDto.UserEmail);
 
             if (users == null)
             {
@@ -87,7 +87,7 @@ namespace Time_Off_Tracker.API.Controllers
 
             var passwordHasher = new PasswordHasher<UserForLoginDto>();
 
-            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(userForLoginDto, users.UserPassword, userForLoginDto.Password);
+            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(userForLoginDto, users.UserPassword, userForLoginDto.UserPassword);
 
             if (passwordVerificationResult != PasswordVerificationResult.Success)
             {
@@ -102,27 +102,16 @@ namespace Time_Off_Tracker.API.Controllers
 
         private string GenerateJwtToken(User user)
         {
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.ID.ToString()),
-                new Claim(ClaimTypes.Name, user.UserName)
-                // Diğer talepleri burada ekleyebilirsiniz
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(15), // Token süresi
-                SigningCredentials = creds
-            };
-
+            var issuer = _configuration["Jwt:Issuer"];
+            var audience = _configuration["Jwt:Audience"];
+            var expiry = DateTime.Now.AddMinutes(120);
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(issuer: issuer, audience: audience,
+expires: expiry, signingCredentials: credentials);
             var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-
-            return tokenHandler.WriteToken(token);
+            var stringToken = tokenHandler.WriteToken(token);
+            return stringToken;
         }
     }
 }

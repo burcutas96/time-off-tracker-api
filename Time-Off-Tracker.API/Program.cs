@@ -9,43 +9,40 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Time_Off_Tracker.API;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApiContext>();
 
 // Add services to the container.
-builder.Services.AddScoped<IUserDal,EfUserDal>();
-builder.Services.AddScoped<IUserService,UserManager>();
+builder.Services.AddScoped<IUserDal, EfUserDal>();
+builder.Services.AddScoped<IUserService, UserManager>();
 
 builder.Services.AddScoped<IPermissionDal, EfPermissionDal>();
 builder.Services.AddScoped<IPermissionService, PermissionManager>();
 
-
 builder.Services.AddCors(options =>
     options.AddPolicy("SpesificOrigins", policy => 
-    policy.WithOrigins("http://localhost:19006", 
-    "https://time-off-tracker-api-4a95404d0134.herokuapp.com") //Kendi hostunuzu yazýnýz.
+    policy.WithOrigins("http://localhost:44374") //Kendi hostunuzu yazýnýz.
     .AllowAnyHeader())
 );
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("EmployeeOnly", policy => policy.RequireRole("Employee"));
-});
-
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(opt => {
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
 .AddJwtBearer(options =>
 {
+    options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-
     };
 });
 builder.Services.AddControllers();
@@ -79,22 +76,25 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityRequirement(securityRequirement);
 });
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
-app.UseSwagger();
-app.UseSwaggerUI();
 
 app.UseCors("SpesificOrigins");
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
+app.UseMiddleware<AuthMiddleware>();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

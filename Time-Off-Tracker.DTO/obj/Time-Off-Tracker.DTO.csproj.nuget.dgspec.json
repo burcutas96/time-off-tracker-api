@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj": {}
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj": {
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj",
         "projectName": "Time-Off-Tracker.DTO",
-        "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\obj\\",
+        "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj",
+        "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
+              "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
+                "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
               }
             }
           }
@@ -81,21 +81,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
         "projectName": "Time-Off-Tracker.Entity",
-        "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
+        "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+        "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,7 +158,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

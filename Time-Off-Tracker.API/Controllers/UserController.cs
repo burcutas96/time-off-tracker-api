@@ -6,6 +6,7 @@ using Time_Off_Tracker.Entity.Concrete;
 
 namespace Time_Off_Tracker.API.Controllers
 {
+    [Authorize]
     [Route("users")] // İstenilen URL yapısı
     [ApiController]
     public class UserController : ControllerBase
@@ -48,7 +49,7 @@ namespace Time_Off_Tracker.API.Controllers
             _userService.SInsert(user);
             return Ok();
         }
-
+        [Authorize]
         [HttpGet]
         public IActionResult UserList()
         {

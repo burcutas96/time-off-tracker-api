@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj": {}
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj": {
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
+        "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
         "projectName": "Time-Off-Tracker.API",
-        "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\obj\\",
+        "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
+        "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj"
+              "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
+                "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj"
               }
             }
           }
@@ -59,17 +58,17 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.8, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.8, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.8, )"
+              "version": "[5.0.17, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -95,21 +94,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
+        "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
         "projectName": "Time-Off-Tracker.Business",
-        "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\obj\\",
+        "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
+        "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,11 +122,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj"
+              "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj": {
+                "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj"
               },
-              "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
+              "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
+                "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
               }
             }
           }
@@ -179,21 +178,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj": {
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj",
         "projectName": "Time-Off-Tracker.DAL",
-        "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\obj\\",
+        "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj",
+        "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,8 +206,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
+              "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
+                "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
               }
             }
           }
@@ -260,21 +259,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
+    "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
         "projectName": "Time-Off-Tracker.Entity",
-        "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
+        "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+        "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -337,7 +336,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

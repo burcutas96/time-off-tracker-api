@@ -8,9 +8,9 @@ namespace Time_Off_Tracker.Entity.Dto
 {
     public class UserForRegisterDto
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public string UserName { get; set; }
+        public string UserLastName { get; set; }
+        public string UserEmail { get; set; }
+        public string UserPassword { get; set; }
     }
 }

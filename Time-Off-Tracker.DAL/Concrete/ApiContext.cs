@@ -12,7 +12,7 @@ namespace Time_Off_Tracker.DAL.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost, 1433; Database=db_TimeOffTracker; User Id=sa; Password=database123; TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Server=time-off-tracker-database.cl7uvv8utzfs.eu-north-1.rds.amazonaws.com; Database=time-off-tracker; User Id=sa; Password=database123; TrustServerCertificate=true");
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Permission> Permissions { get; set; }

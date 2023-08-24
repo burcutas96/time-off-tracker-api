@@ -6100,11 +6100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
       "projectName": "Time-Off-Tracker.API",
-      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.API\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6122,8 +6122,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
-              "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj"
+            "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj"
             }
           }
         }

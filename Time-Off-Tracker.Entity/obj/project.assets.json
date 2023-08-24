@@ -6047,11 +6047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
       "projectName": "Time-Off-Tracker.Entity",
-      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\time-off-tracker-aspnet\\time-off-tracker\\Time-Off-Tracker.Entity\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-api\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

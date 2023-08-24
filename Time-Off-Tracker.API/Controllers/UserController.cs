@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Time_Off_Tracker.Business.Abstract;
 using Time_Off_Tracker.Entity.Concrete;
@@ -49,6 +50,7 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult UserList()
         {
             var values =  _userService.SGetList();

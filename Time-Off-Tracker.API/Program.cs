@@ -18,7 +18,8 @@ builder.Services.AddScoped<IUserService,UserManager>();
 
 builder.Services.AddCors(options =>
     options.AddPolicy("SpesificOrigins", policy => 
-    policy.WithOrigins("http://localhost:19006") //Kendi hostunuzu yazýnýz.
+    policy.WithOrigins("http://localhost:19006", 
+    "https://time-off-tracker-api-4a95404d0134.herokuapp.com") //Kendi hostunuzu yazýnýz.
     .AllowAnyHeader())
 );
 

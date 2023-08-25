@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Time_Off_Tracker.Business.Abstract;
 using Time_Off_Tracker.Entity.Concrete;
@@ -21,25 +22,39 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
-            return Ok();
+            var result= _userService.SGetById(id);
+            return Ok(result);
+            
         }
 
-        [HttpPut("{id}")]
-        public IActionResult UserUpdate(int id)
-        {
-            return Ok();
-        }
+       // [HttpPut("{id}")]
+       // public IActionResult UserUpdate(int id)
+       // {
+        //    return Ok();
+       // }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
         {
-    
-            return Ok();
+            var resultGet = _userService.SGetById(id);
+            if (resultGet == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                _userService.SDelete(resultGet);
+                return Ok("Kullanıcı Başarıyla Silindi!");
+            }
         }
 
-        [HttpPut("update/{id}")]
-        public IActionResult UpdateUser(int id)
+        [HttpPut("update/")]
+        public IActionResult UpdateUser(User user)
         {
+            var passwordHasher = new PasswordHasher<User>();
+            user.UserPassword = passwordHasher.HashPassword(user, user.UserPassword);
+
+            _userService.SUpdate(user);
             return Ok();
         }
 

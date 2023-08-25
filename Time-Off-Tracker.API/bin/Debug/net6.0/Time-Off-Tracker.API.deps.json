@@ -15,7 +15,8 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
           "Swashbuckle.AspNetCore": "6.5.0",
-          "Time-Off-Tracker.Business": "1.0.0"
+          "Time-Off-Tracker.Business": "1.0.0",
+          "Time-Off-Tracker.DTO": "1.0.0"
         },
         "runtime": {
           "Time-Off-Tracker.API.dll": {}
@@ -1140,6 +1141,16 @@
           "Time-Off-Tracker.DAL.dll": {}
         }
       },
+      "Time-Off-Tracker.DTO/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.17",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
+          "Time-Off-Tracker.Entity": "1.0.0"
+        },
+        "runtime": {
+          "Time-Off-Tracker.DTO.dll": {}
+        }
+      },
       "Time-Off-Tracker.Entity/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.17",
@@ -2031,6 +2042,11 @@
       "sha512": ""
     },
     "Time-Off-Tracker.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Time-Off-Tracker.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

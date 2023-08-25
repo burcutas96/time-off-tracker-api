@@ -18,6 +18,16 @@ namespace Time_Off_Tracker.Business.Concrete
             _permissionDal = permissionDal;
         }
 
+        public List<Permission> SGetAllManagerId(int id)
+        {
+            return _permissionDal.GetList(p => p.ManagerID == id);
+        }
+
+        public List<Permission> SGetAllEmployeeId(int id)
+        {
+            return _permissionDal.GetList(p => p.EmployeID == id);
+        }
+
         public void SDelete(Permission t)
         {
             _permissionDal.Delete(t);
@@ -40,8 +50,22 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public void SInsert(Permission t)
         {
+            //Todo: Bu metodun yerine aşağıdaki metodun kullanılması lazım!!!!
+        }
+
+        public bool SInsertPermission(Permission t)
+        {
             t.ID = 0;
+
+            if (t.StartDate >= t.EndDate || t.StartDate < DateTime.Now)
+            {
+                return false;
+            }
+
+            //Todo: Eğer tarihlerde bir sıkıntı yoksa iznin başlangıç tarihiyle bitiş tarihi arasındaki gün sayısı kadar izin gününden azaltma yapılacak!!!!
+
             _permissionDal.Insert(t);
+            return true;
         }
 
         public void SUpdate(Permission t)

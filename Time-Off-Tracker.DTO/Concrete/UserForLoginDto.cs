@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Time_Off_Tracker.Entity.Dto
+namespace Time_Off_Tracker.DTO.Concrete
 {
-    public class UserForRegisterDto
+    public class UserForLoginDto
     {
-        public string UserName { get; set; }
-        public string UserLastName { get; set; }
         public string UserEmail { get; set; }
         public string UserPassword { get; set; }
     }

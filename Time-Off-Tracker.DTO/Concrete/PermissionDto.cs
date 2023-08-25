@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Time_Off_Tracker.Entity.Dto
+namespace Time_Off_Tracker.DTO.Concrete
 {
     public class PermissionDto
     {

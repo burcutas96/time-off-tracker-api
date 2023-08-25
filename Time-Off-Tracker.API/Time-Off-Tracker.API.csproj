@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Time-Off-Tracker.Business\Time-Off-Tracker.Business.csproj" />
+    <ProjectReference Include="..\Time-Off-Tracker.DTO\Time-Off-Tracker.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>

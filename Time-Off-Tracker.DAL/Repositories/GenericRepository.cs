@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Time_Off_Tracker.DAL.Abstract;
@@ -26,9 +27,9 @@ namespace Time_Off_Tracker.DAL.Repositories
             return _context.Set<T>().Find(id);
         }
 
-        public List<T> GetList()
+        public List<T> GetList(Expression<Func<T, bool>> filter = null)
         {
-            return _context.Set<T>().ToList();
+            return filter != null ? _context.Set<T>().Where(filter).ToList() : _context.Set<T>().ToList();
         }
 
         public void Insert(T t)

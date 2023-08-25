@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Time_Off_Tracker.Business.Abstract;
+using Time_Off_Tracker.DTO.Concrete;
 using Time_Off_Tracker.Entity.Concrete;
-using Time_Off_Tracker.Entity.Dto;
 
 namespace Time_Off_Tracker.API.Controllers
 {
@@ -53,10 +53,37 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpGet("getall")]
-        public IActionResult TimeOffList()
+        [HttpGet("getallmanager/{ID}")]
+        public IActionResult TimeOffManagerList(int ID)
         {
-            var result = _permissionService.SGetList();
+            var result = _permissionService.SGetAllManagerId(ID);
+
+            if (result.Count == 0)
+            {
+                return Ok(
+                    new { 
+                        Message = "Bu manager'a ait bir izin gönderilmemiş!",  
+                        Data = result
+                    });
+            }
+            return Ok(result);
+        }
+
+
+        [HttpGet("getallemployee/{ID}")]
+        public IActionResult TimeOffEmployeeList(int ID)
+        {
+            var result = _permissionService.SGetAllEmployeeId(ID);
+
+            if (result.Count == 0)
+            {
+                return Ok(
+                    new
+                    {
+                        Message = "Bu employee'e ait bir izin gönderilmemiş!",
+                        Data = result
+                    });
+            }
             return Ok(result);
         }
 
@@ -64,11 +91,13 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpPost("add")]
         public IActionResult TimeOffAdd(PermissionDto permissionDto)
         {
+            //Todo: Eğer EmployeeId, bir manager rolüne karşılık geliyorsa izin oluşturulamasın. Ya da bunun üzerine sonra tartışalım
+
             var managerId = _userService.SGetById(permissionDto.ManagerId);
             
             if (managerId.UserRole != "Manager")
             {
-                return BadRequest();
+                return BadRequest("Lütfen yönetici rolünde bir seçim yapın!");  //Todo: Bu mesaj değiştirilebilir
             }
 
             Permission permission = new()
@@ -81,8 +110,13 @@ namespace Time_Off_Tracker.API.Controllers
                 TimeOffType = "Pending"
             };
 
-            _permissionService.SInsert(permission);
-            return Ok();
+            var result = _permissionService.SInsertPermission(permission);
+
+            if (result)
+            {
+                return Ok("İzin Başarıyla Gönderildi!");
+            }
+            return BadRequest("İzin Tarihleri Geçersiz!");    //Todo: Bu mesaj değiştirilebilir
         }
     }
 }

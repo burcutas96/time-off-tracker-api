@@ -9,6 +9,8 @@ namespace Time_Off_Tracker.Business.Abstract
 {
     public interface IPermissionService: IGenericService<Permission>
     {
-
+        List<Permission> SGetAllManagerId(int id);
+        List<Permission> SGetAllEmployeeId(int id);
+        bool SInsertPermission(Permission permission);
     }
 }

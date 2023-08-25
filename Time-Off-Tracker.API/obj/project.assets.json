@@ -6925,19 +6925,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ramia\\.nuget\\packages\\": {}
+    "C:\\Users\\ismai\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
+      "projectUniqueName": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
       "projectName": "Time-Off-Tracker.API",
-      "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
-      "packagesPath": "C:\\Users\\ramia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\obj\\",
+      "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.API\\Time-Off-Tracker.API.csproj",
+      "packagesPath": "C:\\Users\\ismai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ramia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ismai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6951,11 +6956,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
-              "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj"
+            "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj": {
+              "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj"
             },
-            "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj": {
-              "projectPath": "C:\\Users\\ramia\\OneDrive\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj"
+            "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj": {
+              "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.DTO\\Time-Off-Tracker.DTO.csproj"
             }
           }
         }

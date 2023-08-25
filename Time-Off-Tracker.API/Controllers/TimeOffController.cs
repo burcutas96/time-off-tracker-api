@@ -22,7 +22,7 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpGet("{id}")]
         public IActionResult TimeOffGet(int id)
         {
-          var result=  _permissionService.SGetById(id);
+            var result = _permissionService.SGetById(id);
             return Ok(result);
         }
 
@@ -31,15 +31,15 @@ namespace Time_Off_Tracker.API.Controllers
         public IActionResult TimeOffUpdate(Permission permission)
         {
             _permissionService.SUpdate(permission);
-            return Ok();
+            return Ok("İzin Başarıyla Güncellendi!");
         }
 
 
 
         [HttpDelete("delete/{id}")]
-        public IActionResult TimeOffDelete(int ID)
+        public IActionResult TimeOffDelete(int id)
         {
-            var resultGet = _permissionService.SGetById(ID);
+            var resultGet = _permissionService.SGetById(id);
             if (resultGet == null)
             {
                 return BadRequest();
@@ -47,22 +47,23 @@ namespace Time_Off_Tracker.API.Controllers
             else
             {
                 _permissionService.SDelete(resultGet);
-                return Ok("Kullanıcı Başarıyla Silindi!");
+                return Ok("İzin Başarıyla Silindi!");
             }
 
         }
 
 
         [HttpGet("getallmanager/{id}")]
-        public IActionResult TimeOffManagerList(int ID)
+        public IActionResult TimeOffManagerList(int id)
         {
-            var result = _permissionService.SGetAllManagerId(ID);
+            var result = _permissionService.SGetAllManagerId(id);
 
             if (result.Count == 0)
             {
                 return Ok(
-                    new { 
-                        Message = "Bu manager'a ait bir izin gönderilmemiş!",  
+                    new
+                    {
+                        Message = "Bu manager'a ait bir izin gönderilmemiş!",
                         Data = result
                     });
             }
@@ -71,9 +72,9 @@ namespace Time_Off_Tracker.API.Controllers
 
 
         [HttpGet("getallemployee/{id}")]
-        public IActionResult TimeOffEmployeeList(int ID)
+        public IActionResult TimeOffEmployeeList(int id)
         {
-            var result = _permissionService.SGetAllEmployeeId(ID);
+            var result = _permissionService.SGetAllEmployeeId(id);
 
             if (result.Count == 0)
             {
@@ -91,13 +92,25 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpPost("add")]
         public IActionResult TimeOffAdd(PermissionDto permissionDto)
         {
+
+            var user = _userService.SGetById(permissionDto.EmployeeId);
+
+            if (user == null)
+            {
+                return NotFound("Kullanıcı bulunamadı");
+            }
+
+            if (user.RamainingDayOff < permissionDto.NumberOfDays)
+            {
+                return BadRequest("Yetersiz izin hakkı");
+            }
             //Todo: Eğer EmployeeId, bir manager rolüne karşılık geliyorsa izin oluşturulamasın. Ya da bunun üzerine sonra tartışalım
 
             var managerId = _userService.SGetById(permissionDto.ManagerId);
-            
+
             if (managerId.UserRole != "Manager")
             {
-                return BadRequest("Lütfen yönetici rolünde bir seçim yapın!");  //Todo: Bu mesaj değiştirilebilir
+                return BadRequest("Yönetici Bulunamadı!");  //Todo: Bu mesaj değiştirilebilir
             }
 
             Permission permission = new()
@@ -109,6 +122,10 @@ namespace Time_Off_Tracker.API.Controllers
                 EndDate = permissionDto.EndDate,
                 TimeOffType = "Pending"
             };
+            user.RamainingDayOff -= permissionDto.NumberOfDays;
+            _userService.SUpdate(user);
+
+
 
             var result = _permissionService.SInsertPermission(permission);
 
@@ -117,6 +134,7 @@ namespace Time_Off_Tracker.API.Controllers
                 return Ok("İzin Başarıyla Gönderildi!");
             }
             return BadRequest("İzin Tarihleri Geçersiz!");    //Todo: Bu mesaj değiştirilebilir
+
         }
     }
 }

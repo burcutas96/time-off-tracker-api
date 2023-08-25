@@ -57,7 +57,7 @@ namespace Time_Off_Tracker.Business.Concrete
         {
             t.ID = 0;
 
-            if (t.StartDate >= t.EndDate || t.StartDate < DateTime.Now)
+            if (t.StartDate >= t.EndDate && t.StartDate <= DateTime.Now)
             {
                 return false;
             }

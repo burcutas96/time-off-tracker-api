@@ -26,9 +26,6 @@ namespace Time_Off_Tracker.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -42,8 +39,8 @@ namespace Time_Off_Tracker.DAL.Migrations
                     b.Property<int>("ManagerID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("RamainingDayOff")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -63,6 +60,9 @@ namespace Time_Off_Tracker.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("RamainingDayOff")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UserCreateDate")
                         .HasColumnType("datetime2");

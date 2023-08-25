@@ -36,7 +36,7 @@ namespace Time_Off_Tracker.API.Controllers
 
 
 
-        [HttpDelete("delete/{ID}")]
+        [HttpDelete("delete/{id}")]
         public IActionResult TimeOffDelete(int ID)
         {
             var resultGet = _permissionService.SGetById(ID);
@@ -53,7 +53,7 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpGet("getallmanager/{ID}")]
+        [HttpGet("getallmanager/{id}")]
         public IActionResult TimeOffManagerList(int ID)
         {
             var result = _permissionService.SGetAllManagerId(ID);
@@ -70,7 +70,7 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpGet("getallemployee/{ID}")]
+        [HttpGet("getallemployee/{id}")]
         public IActionResult TimeOffEmployeeList(int ID)
         {
             var result = _permissionService.SGetAllEmployeeId(ID);

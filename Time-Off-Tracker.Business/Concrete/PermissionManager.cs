@@ -50,7 +50,7 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public void SInsert(Permission t)
         {
-            //Todo: Bu metodun yerine aşağıdaki metodun kullanılması lazım!!!!
+           
         }
 
         public bool SInsertPermission(Permission t)
@@ -62,7 +62,7 @@ namespace Time_Off_Tracker.Business.Concrete
                 return false;
             }
 
-            //Todo: Eğer tarihlerde bir sıkıntı yoksa iznin başlangıç tarihiyle bitiş tarihi arasındaki gün sayısı kadar izin gününden azaltma yapılacak!!!!
+            
 
             _permissionDal.Insert(t);
             return true;

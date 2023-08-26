@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Time_Off_Tracker.Business.Abstract;
 using Time_Off_Tracker.DTO.Concrete;
 using Time_Off_Tracker.Entity.Concrete;
@@ -102,7 +103,7 @@ namespace Time_Off_Tracker.API.Controllers
             return Ok(result);
         }
 
-
+        
         [HttpPost("add")]
         public IActionResult TimeOffAdd(PermissionDto permissionDto)
         {
@@ -118,13 +119,13 @@ namespace Time_Off_Tracker.API.Controllers
             {
                 return BadRequest("Yetersiz izin hakkı");
             }
-            //Todo: Eğer EmployeeId, bir manager rolüne karşılık geliyorsa izin oluşturulamasın. Ya da bunun üzerine sonra tartışalım
+           
 
             var managerId = _userService.SGetById(permissionDto.ManagerId);
 
             if (managerId.UserRole != "Manager")
             {
-                return BadRequest("Yönetici Bulunamadı!");  //Todo: Bu mesaj değiştirilebilir
+                return BadRequest("Yönetici Bulunamadı!"); 
             }
 
             Permission permission = new()
@@ -147,7 +148,7 @@ namespace Time_Off_Tracker.API.Controllers
             {
                 return Ok("İzin Başarıyla Gönderildi!");
             }
-            return BadRequest("İzin Tarihleri Geçersiz!");    //Todo: Bu mesaj değiştirilebilir
+            return BadRequest("İzin Tarihleri Geçersiz!");    
 
         }
     }

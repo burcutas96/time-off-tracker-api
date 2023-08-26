@@ -55,14 +55,14 @@ namespace Time_Off_Tracker.API.Controllers
             user.UserPassword = passwordHasher.HashPassword(user, user.UserPassword);
 
             _userService.SUpdate(user);
-            return Ok();
+            return Ok("Kullanıcı Başarıyla Güncellendi!");
         }
 
-        [HttpPost("password-changes")]
+        [HttpPost("add")]
         public IActionResult AddUser(User user)
         {
             _userService.SInsert(user);
-            return Ok();
+            return Ok("Kullanıcı Başarıyla Eklendi!");
         }
         [Authorize]
         [HttpGet]

@@ -32,11 +32,11 @@ namespace Time_Off_Tracker.API.Controllers
                 // Başarılı yanıt döndürün
 
                 // Kullanıcının veritabanında var olup olmadığını kontrol edin
-                var existingUserName = _userService.SGetByUsername(userForRegisterDto.UserName);
+                
                 var existingUser = _userService.SGetByEmail(userForRegisterDto.UserEmail);
-                if (existingUserName != null || existingUser != null)
+                if ( existingUser != null)
                 {
-                    return Conflict("Girdiğiniz kullanıcı zaten mevcut, giriş yapın!");
+                    return Conflict("Girdiğiniz mail zaten mevcut, giriş yapın!");
                 }
 
 

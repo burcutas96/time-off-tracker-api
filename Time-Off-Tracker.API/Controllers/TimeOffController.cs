@@ -119,13 +119,13 @@ namespace Time_Off_Tracker.API.Controllers
             {
                 return BadRequest("Yetersiz izin hakkı");
             }
-           
+
 
             var managerId = _userService.SGetById(permissionDto.ManagerId);
 
             if (managerId.UserRole != "Manager")
             {
-                return BadRequest("Yönetici Bulunamadı!"); 
+                return BadRequest("Yönetici Bulunamadı!");
             }
 
             Permission permission = new()
@@ -144,11 +144,11 @@ namespace Time_Off_Tracker.API.Controllers
 
             var result = _permissionService.SInsertPermission(permission);
 
-            if (result)
+            if (result.Item1)
             {
-                return Ok("İzin Başarıyla Gönderildi!");
+                return Ok(result.Item2);
             }
-            return BadRequest("İzin Tarihleri Geçersiz!");    
+            return BadRequest(result.Item2);
 
         }
     }

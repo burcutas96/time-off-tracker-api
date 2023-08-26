@@ -53,19 +53,30 @@ namespace Time_Off_Tracker.Business.Concrete
            
         }
 
-        public bool SInsertPermission(Permission t)
+        public Tuple<bool,string> SInsertPermission(Permission t)
         {
             t.ID = 0;
 
-            if (t.StartDate >= t.EndDate && t.StartDate <= DateTime.Now)
+            if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
             {
-                return false;
+                return new Tuple<bool, string>(false ,"Başlangıç tarihi ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
             }
-
-            
-
-            _permissionDal.Insert(t);
-            return true;
+            else
+            {
+                if (t.EndDate == DateTime.Now.Date)
+                {
+                    return new Tuple<bool, string>(false, "Sadece startDate gönderildi.");
+                }
+                else if (t.StartDate >= t.EndDate && t.StartDate <= DateTime.Now)
+                {
+                    return new Tuple<bool, string>(false, "Geçersiz Tarihler");
+                }
+                else
+                {
+                    _permissionDal.Insert(t);
+                    return new Tuple<bool, string>(false, "Çoklu seçim yapıldı. İzin gönderildi");
+                }
+            }
         }
 
         public void SUpdate(Permission t)

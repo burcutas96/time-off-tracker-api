@@ -69,6 +69,20 @@ namespace Time_Off_Tracker.API.Controllers
             }
             return Ok(result);
         }
+        [HttpPut("updateTimeOff-Rejected/{id}")]
+        public IActionResult TimeOffUpdateRejected([FromRoute] int id)
+        {
+            _permissionService.TimeOffTypeUpdate(id, "Rejected");
+            return Ok("TimeOffType Güncellendi");
+        }
+
+        [HttpPut("updateTimeOff-Accept/{id}")]
+        public IActionResult TimeOffUpdateAccept([FromRoute] int id)
+        {
+            _permissionService.TimeOffTypeUpdate(id, "Accept");
+            return Ok("TimeOffType Güncellendi");
+        }
+
 
 
         [HttpGet("getallemployee/{id}")]

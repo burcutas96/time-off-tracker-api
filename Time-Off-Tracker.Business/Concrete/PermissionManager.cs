@@ -72,5 +72,11 @@ namespace Time_Off_Tracker.Business.Concrete
         {
            _permissionDal.Update(t);
         }
+        public void TimeOffTypeUpdate(int id, string timeOffType)
+        {
+            Permission permission = SGetById(id);
+            permission.TimeOffType = timeOffType;
+            SUpdate(permission);
+        }
     }
 }

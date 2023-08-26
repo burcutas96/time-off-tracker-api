@@ -59,7 +59,7 @@ namespace Time_Off_Tracker.Business.Concrete
 
             if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
             {
-                return new Tuple<bool, string>(false ,"Başlangıç tarihi ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
+                return new Tuple<bool, string>(false ,"Başlangıç  ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
             }
             else
             {
@@ -74,7 +74,7 @@ namespace Time_Off_Tracker.Business.Concrete
                 else
                 {
                     _permissionDal.Insert(t);
-                    return new Tuple<bool, string>(false, "Çoklu seçim yapıldı. İzin gönderildi");
+                    return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
                 }
             }
         }

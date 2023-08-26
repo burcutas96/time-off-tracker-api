@@ -12,13 +12,9 @@ namespace Time_Off_Tracker.DTO.Concrete
         public int EmployeeId { get; set; }
         public int ManagerId { get; set; }
         public string Description { get; set; }
-
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
-
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EndDate { get; set; }
         public int NumberOfDays { get; set; } // Talep edilen izin gün sayısı
     }

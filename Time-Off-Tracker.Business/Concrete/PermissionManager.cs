@@ -45,43 +45,46 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public List<Permission> SGetList()
         {
-           return _permissionDal.GetList();
+            return _permissionDal.GetList();
         }
 
         public void SInsert(Permission t)
         {
-           
+
         }
 
-        public Tuple<bool,string> SInsertPermission(Permission t)
+        public Tuple<bool, string> SInsertPermission(Permission t)
         {
-            t.ID = 0;
-
-            if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
+            if (t.StartDate < DateTime.Now.Date || t.EndDate == DateTime.Now.Date)
             {
-                return new Tuple<bool, string>(false ,"Başlangıç  ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
+                return new Tuple<bool, string>(false, "Geçersiz Tarihler");
             }
             else
             {
-                if (t.EndDate == DateTime.Now.Date)
+                if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
                 {
-                    return new Tuple<bool, string>(false, "Sadece startDate gönderildi.");
-                }
-                else if (t.StartDate >= t.EndDate && t.StartDate <= DateTime.Now)
-                {
-                    return new Tuple<bool, string>(false, "Geçersiz Tarihler");
+                    return new Tuple<bool, string>(false, "Başlangıç  ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
                 }
                 else
                 {
-                    _permissionDal.Insert(t);
-                    return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
+                    if (t.EndDate == DateTime.Now.Date)
+                    {
+                        return new Tuple<bool, string>(false, "Sadece startDate gönderildi.");
+
+                    }
+                    else
+                    {
+                        _permissionDal.Insert(t);
+                        return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
+                    }
                 }
             }
+            
         }
 
         public void SUpdate(Permission t)
         {
-           _permissionDal.Update(t);
+            _permissionDal.Update(t);
         }
         public void TimeOffTypeUpdate(int id, string timeOffType)
         {

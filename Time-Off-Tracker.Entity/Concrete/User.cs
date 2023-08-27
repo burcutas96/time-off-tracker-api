@@ -14,6 +14,7 @@ namespace Time_Off_Tracker.Entity.Concrete
         public string UserLastName { get; set; }
         public string UserEmail { get; set; }
         public int RamainingDayOff { get; set; } = 30;
+        public string TimeOffType { get; set; }
         public string UserRole { get; set; }
         public bool UserStatus { get; set; }
         public DateTime UserCreateDate { get; set; }

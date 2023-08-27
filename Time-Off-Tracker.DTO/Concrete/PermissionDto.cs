@@ -16,6 +16,6 @@ namespace Time_Off_Tracker.DTO.Concrete
         public DateTime StartDate { get; set; }
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
-        public int NumberOfDays { get; set; } // Talep edilen izin gün sayısı
+        /*public int NumberOfDays { get; set; }*/ // Talep edilen izin gün sayısı
     }
 }

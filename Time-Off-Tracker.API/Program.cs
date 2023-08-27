@@ -1,15 +1,13 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Net.NetworkInformation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
+using Time_Off_Tracker.API;
 using Time_Off_Tracker.Business.Abstract;
 using Time_Off_Tracker.Business.Concrete;
 using Time_Off_Tracker.DAL.Abstract;
 using Time_Off_Tracker.DAL.Concrete;
 using Time_Off_Tracker.DAL.Entity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.OpenApi.Models;
-using Time_Off_Tracker.API;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApiContext>();

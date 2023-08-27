@@ -7,7 +7,6 @@ using Time_Off_Tracker.Entity.Concrete;
 
 namespace Time_Off_Tracker.API.Controllers
 {
-    [Authorize]
     [Route("users")] // İstenilen URL yapısı
     [ApiController]
     public class UserController : ControllerBase
@@ -19,6 +18,8 @@ namespace Time_Off_Tracker.API.Controllers
             _userService = userService;
         }
 
+
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
@@ -27,12 +28,15 @@ namespace Time_Off_Tracker.API.Controllers
             
         }
 
-       // [HttpPut("{id}")]
-       // public IActionResult UserUpdate(int id)
-       // {
-        //    return Ok();
-       // }
 
+        // [HttpPut("{id}")]
+        // public IActionResult UserUpdate(int id)
+        // {
+        //    return Ok();
+        // }
+
+
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
         {
@@ -48,6 +52,8 @@ namespace Time_Off_Tracker.API.Controllers
             }
         }
 
+
+        [Authorize]
         [HttpPut("update/")]
         public IActionResult UpdateUser(User user)
         {
@@ -58,13 +64,16 @@ namespace Time_Off_Tracker.API.Controllers
             return Ok("Kullanıcı Başarıyla Güncellendi!");
         }
 
+
+        [Authorize]
         [HttpPost("add")]
         public IActionResult AddUser(User user)
         {
             _userService.SInsert(user);
             return Ok("Kullanıcı Başarıyla Eklendi!");
         }
-        [Authorize]
+        
+
         [HttpGet]
         public IActionResult UserList()
         {

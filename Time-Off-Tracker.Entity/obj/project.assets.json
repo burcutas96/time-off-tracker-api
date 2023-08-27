@@ -6042,24 +6042,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ismai\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
       "projectName": "Time-Off-Tracker.Entity",
-      "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
-      "packagesPath": "C:\\Users\\ismai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ismai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6122,7 +6117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

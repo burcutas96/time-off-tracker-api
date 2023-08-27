@@ -41,6 +41,15 @@ namespace Time_Off_Tracker.API.Controllers
         public IActionResult TimeOffDelete(int id)
         {
             var resultGet = _permissionService.SGetById(id);
+
+            var user = _userService.SGetById(resultGet.EmployeID);
+
+            TimeSpan difference = resultGet.EndDate.Subtract(resultGet.StartDate);
+            var number = difference.Days + 1;
+            user.RamainingDayOff += number;
+
+            _userService.SUpdate(user);
+
             if (resultGet == null)
             {
                 return BadRequest();
@@ -73,6 +82,15 @@ namespace Time_Off_Tracker.API.Controllers
         [HttpPut("updateTimeOff-Rejected/{id}")]
         public IActionResult TimeOffUpdateRejected([FromRoute] int id)
         {
+            var permission = _permissionService.SGetById(id);
+            var user = _userService.SGetById(permission.EmployeID);
+
+            TimeSpan difference = permission.EndDate.Subtract(permission.StartDate);
+            var number = difference.Days + 1;
+            user.RamainingDayOff += number;
+
+            _userService.SUpdate(user);
+
             _permissionService.TimeOffTypeUpdate(id, "Rejected");
             return Ok("TimeOffType Güncellendi");
         }
@@ -115,10 +133,15 @@ namespace Time_Off_Tracker.API.Controllers
                 return NotFound("Kullanıcı bulunamadı");
             }
 
-            if (user.RamainingDayOff < permissionDto.NumberOfDays)
+            TimeSpan difference = permissionDto.EndDate.Subtract(permissionDto.StartDate);
+            var number = difference.Days + 1;
+
+            if (number > 30)
             {
                 return BadRequest("Yetersiz izin hakkı");
             }
+            
+
             if (permissionDto.StartDate > permissionDto.EndDate)
             {
                 return BadRequest("İzin başlangıç tarihi bitiş tarihinden önce olmalıdır");
@@ -147,7 +170,7 @@ namespace Time_Off_Tracker.API.Controllers
                 EndDate = permissionDto.EndDate,
                 TimeOffType = "Pending"
             };
-            user.RamainingDayOff -= permissionDto.NumberOfDays;
+            user.RamainingDayOff -= number;
             _userService.SUpdate(user);
 
 

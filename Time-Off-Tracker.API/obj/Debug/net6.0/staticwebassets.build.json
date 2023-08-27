@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+pzHEYM2WhB3W3LagFXugVarz5bS8OAhfb+t9fEZ5K0=",
+  "Hash": "Midw8PFQpi7sE56dM64GIr4RUIs3cpmLhBlOr1Y1djU=",
   "Source": "Time-Off-Tracker.API",
   "BasePath": "_content/Time-Off-Tracker.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Time-Off-Tracker.API\\wwwroot",
       "Source": "Time-Off-Tracker.API",
-      "ContentRoot": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\",
       "BasePath": "_content/Time-Off-Tracker.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\swagger.json",
+      "Identity": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\swagger.json",
       "SourceId": "Time-Off-Tracker.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.API\\wwwroot\\",
       "BasePath": "_content/Time-Off-Tracker.API",
       "RelativePath": "swagger.json",
       "AssetKind": "All",

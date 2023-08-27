@@ -6083,19 +6083,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\ismai\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
+      "projectUniqueName": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
       "projectName": "Time-Off-Tracker.Business",
-      "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Business\\obj\\",
+      "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Business\\Time-Off-Tracker.Business.csproj",
+      "packagesPath": "C:\\Users\\ismai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Business\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ismai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6109,11 +6114,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj"
+            "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj": {
+              "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.DAL\\Time-Off-Tracker.DAL.csproj"
             },
-            "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
+            "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj": {
+              "projectPath": "C:\\Users\\ismai\\OneDrive\\Masaüstü\\time-off-tracker-apii\\Time-Off-Tracker.Entity\\Time-Off-Tracker.Entity.csproj"
             }
           }
         }
@@ -6165,7 +6170,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

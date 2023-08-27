@@ -55,30 +55,29 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public Tuple<bool, string> SInsertPermission(Permission t)
         {
-            if (t.StartDate < DateTime.Now.Date || t.EndDate == DateTime.Now.Date)
-            {
-                return new Tuple<bool, string>(false, "Geçersiz Tarihler");
-            }
-            else
-            {
-                if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
-                {
-                    return new Tuple<bool, string>(false, "Başlangıç  ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
-                }
-                else
-                {
-                    if (t.EndDate == DateTime.Now.Date)
-                    {
-                        return new Tuple<bool, string>(false, "Sadece startDate gönderildi.");
+            //if (t.StartDate < DateTime.Now.Date || t.EndDate == DateTime.Now.Date)
+            //{
+            //    return new Tuple<bool, string>(false, "Geçersiz Tarihler");
+            //}
+            //else
+            //{
+            //    if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
+            //    {
+            //        return new Tuple<bool, string>(false, "Başlangıç  ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
+            //    }
+            //    else
+            //    {
+            //        if (t.EndDate == DateTime.Now.Date)
+            //        {
+            //            return new Tuple<bool, string>(false, "Sadece startDate gönderildi.");
 
-                    }
-                    else
-                    {
-                        _permissionDal.Insert(t);
-                        return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
-                    }
-                }
-            }
+            //        }
+            //        else
+            //        {
+                       
+            //        }
+                    _permissionDal.Insert(t);
+                    return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
             
         }
 

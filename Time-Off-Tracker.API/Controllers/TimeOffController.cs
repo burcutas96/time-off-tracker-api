@@ -119,6 +119,16 @@ namespace Time_Off_Tracker.API.Controllers
             {
                 return BadRequest("Yetersiz izin hakkı");
             }
+            if (permissionDto.StartDate > permissionDto.EndDate)
+            {
+                return BadRequest("İzin başlangıç tarihi bitiş tarihinden önce olmalıdır");
+            }
+            
+
+            if (permissionDto.StartDate < DateTime.Today)
+            {
+                return BadRequest("İzin başlangıç tarihi bugünden önce olamaz");
+            }
 
 
             var managerId = _userService.SGetById(permissionDto.ManagerId);

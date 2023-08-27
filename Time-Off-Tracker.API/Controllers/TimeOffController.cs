@@ -28,37 +28,21 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpPut("update")]
-        public IActionResult TimeOffUpdate(Permission permission)
+        [HttpGet("getallemployee/{id}")]
+        public IActionResult TimeOffEmployeeList(int id)
         {
-            _permissionService.SUpdate(permission);
-            return Ok("İzin Başarıyla Güncellendi!");
-        }
+            var result = _permissionService.SGetAllEmployeeId(id);
 
-
-
-        [HttpDelete("delete/{id}")]
-        public IActionResult TimeOffDelete(int id)
-        {
-            var resultGet = _permissionService.SGetById(id);
-
-            var user = _userService.SGetById(resultGet.EmployeID);
-
-            TimeSpan difference = resultGet.EndDate.Subtract(resultGet.StartDate);
-            var number = difference.Days + 1;
-            user.RamainingDayOff += number;
-
-            _userService.SUpdate(user);
-
-            if (resultGet == null)
+            if (result.Count == 0)
             {
-                return BadRequest();
+                return Ok(
+                    new
+                    {
+                        Message = "Bu employee'a ait bir izin gönderilmemiş!",
+                        Data = result
+                    });
             }
-            else
-            {
-                _permissionService.SDelete(resultGet);
-                return Ok("İzin Başarıyla Silindi!");
-            }
+            return Ok(result);
         }
 
 
@@ -86,17 +70,41 @@ namespace Time_Off_Tracker.API.Controllers
                 {
                     item.ID,
                     item.EmployeID,
+                    employeeName,
                     item.ManagerID,
                     item.TimeOffType,
                     item.Description,
                     item.StartDate,
-                    item.EndDate,
-                    employeeName 
+                    item.EndDate
                 };
                 modifiedResults.Add(modifiedItem);
             }
-
             return Ok(modifiedResults);
+        }
+
+
+        [HttpDelete("delete/{id}")]
+        public IActionResult TimeOffDelete(int id)
+        {
+            var resultGet = _permissionService.SGetById(id);
+
+            var user = _userService.SGetById(resultGet.EmployeID);
+
+            TimeSpan difference = resultGet.EndDate.Subtract(resultGet.StartDate);
+            var number = difference.Days + 1;
+            user.RamainingDayOff += number;
+
+            _userService.SUpdate(user);
+
+            if (resultGet == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                _permissionService.SDelete(resultGet);
+                return Ok("İzin Başarıyla Silindi!");
+            }
         }
 
 
@@ -125,24 +133,40 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpGet("getallemployee/{id}")]
-        public IActionResult TimeOffEmployeeList(int id)
+        [HttpGet("getallaccept")]
+        public IActionResult GetAllAccept(DateTime date)
         {
-            var result = _permissionService.SGetAllEmployeeId(id);
+            var accepts = _permissionService.GetAllAccept(date);
 
-            if (result.Count == 0)
+            if (accepts.Count == 0)
             {
-                return Ok(
-                    new
-                    {
-                        Message = "Bu employee'e ait bir izin gönderilmemiş!",
-                        Data = result
-                    });
+                return Ok("Bu tarihte izinli kimse yok!");
             }
-            return Ok(result);
+            return Ok(accepts);
         }
 
-        
+
+        [HttpGet("getallrejected")]
+        public IActionResult GetAllRejected(DateTime date)
+        {
+            var rejecteds = _permissionService.GetAllRejected(date);
+
+            if (rejecteds.Count == 0)
+            {
+                return Ok("Reddilen hiçbir izin yok!");
+            }
+            return Ok(rejecteds);
+        }
+
+
+        [HttpPut("update")]
+        public IActionResult TimeOffUpdate(Permission permission)
+        {
+            _permissionService.SUpdate(permission);
+            return Ok("İzin Başarıyla Güncellendi!");
+        }
+
+
         [HttpPost("add")]
         public IActionResult TimeOffAdd(PermissionDto permissionDto)
         {
@@ -193,8 +217,6 @@ namespace Time_Off_Tracker.API.Controllers
             };
             user.RamainingDayOff -= number;
             _userService.SUpdate(user);
-
-
 
             var result = _permissionService.SInsertPermission(permission);
 

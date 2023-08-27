@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using Time_Off_Tracker.Business.Abstract;
@@ -55,29 +57,8 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public Tuple<bool, string> SInsertPermission(Permission t)
         {
-            //if (t.StartDate < DateTime.Now.Date || t.EndDate == DateTime.Now.Date)
-            //{
-            //    return new Tuple<bool, string>(false, "Geçersiz Tarihler");
-            //}
-            //else
-            //{
-            //    if (t.StartDate == DateTime.Now.Date && t.EndDate == DateTime.Now.Date)
-            //    {
-            //        return new Tuple<bool, string>(false, "Başlangıç  ve bitiş tarihi bugünün tarihi ile aynı olamaz.");
-            //    }
-            //    else
-            //    {
-            //        if (t.EndDate == DateTime.Now.Date)
-            //        {
-            //            return new Tuple<bool, string>(false, "Sadece startDate gönderildi.");
-
-            //        }
-            //        else
-            //        {
-                       
-            //        }
-                    _permissionDal.Insert(t);
-                    return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
+            _permissionDal.Insert(t);                  
+            return new Tuple<bool, string>(true, "Çoklu seçim yapıldı. İzin gönderildi");
             
         }
 
@@ -85,11 +66,22 @@ namespace Time_Off_Tracker.Business.Concrete
         {
             _permissionDal.Update(t);
         }
+
         public void TimeOffTypeUpdate(int id, string timeOffType)
         {
             Permission permission = SGetById(id);
             permission.TimeOffType = timeOffType;
             SUpdate(permission);
+        }
+
+        public List<Permission> GetAllAccept(DateTime date)
+        {
+            return _permissionDal.GetList(p => p.StartDate <= date && p.EndDate >= date && p.TimeOffType == "Accept").ToList();
+        }
+        
+        public List<Permission> GetAllRejected(DateTime date)
+        {
+            return _permissionDal.GetList(p => p.StartDate <= date && p.EndDate >= date && p.TimeOffType == "Rejected").ToList();
         }
     }
 }

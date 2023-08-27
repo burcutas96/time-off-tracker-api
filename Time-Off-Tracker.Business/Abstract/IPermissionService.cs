@@ -11,6 +11,8 @@ namespace Time_Off_Tracker.Business.Abstract
     {
         List<Permission> SGetAllManagerId(int id);
         List<Permission> SGetAllEmployeeId(int id);
+        List<Permission> GetAllAccept(DateTime date);
+        List<Permission> GetAllRejected(DateTime date);
         Tuple<bool, string> SInsertPermission(Permission permission);
         void TimeOffTypeUpdate(int id, string timeOffType);
     }

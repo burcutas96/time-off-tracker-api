@@ -29,6 +29,14 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult UserList()
+        {
+            var values =  _userService.SGetList();
+            return Ok(values);
+        }
+
+
         // [HttpPut("{id}")]
         // public IActionResult UserUpdate(int id)
         // {
@@ -72,15 +80,5 @@ namespace Time_Off_Tracker.API.Controllers
             _userService.SInsert(user);
             return Ok("Kullanıcı Başarıyla Eklendi!");
         }
-        
-
-        [HttpGet]
-        public IActionResult UserList()
-        {
-            var values =  _userService.SGetList();
-            return Ok(values);
-        }
-
-
     }
 }

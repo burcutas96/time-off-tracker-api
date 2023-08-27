@@ -46,12 +46,15 @@ builder.Services.AddAuthentication(opt => {
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Time-Off-Tracker.API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Time-Off-Tracker.API", Version = "V2.0 (Stable) Backend Ekip-2" });
 
     // Yetkilendirme seçeneklerini belirtin
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -84,7 +87,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Time-Off-Tracker.API V2.0 (Stable) Backend Ekip-2");
 });
 
 app.UseCors("SpesificOrigins");
@@ -94,8 +97,8 @@ app.UseHttpsRedirection();
 app.UseMiddleware<AuthMiddleware>();
 
 app.UseAuthentication();
-app.UseAuthorization();
 
+app.UseAuthorization();
 
 app.MapControllers();
 

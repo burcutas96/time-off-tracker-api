@@ -59,26 +59,47 @@ namespace Time_Off_Tracker.API.Controllers
                 _permissionService.SDelete(resultGet);
                 return Ok("İzin Başarıyla Silindi!");
             }
-
         }
 
 
         [HttpGet("getallmanager/{id}")]
         public IActionResult TimeOffManagerList(int id)
         {
-            var result = _permissionService.SGetAllManagerId(id);
-
-            if (result.Count == 0)
+            var resultAllManager = _permissionService.SGetAllManagerId(id);
+            if (resultAllManager.Count == 0)
             {
                 return Ok(
                     new
                     {
                         Message = "Bu manager'a ait bir izin gönderilmemiş!",
-                        Data = result
+                        Data = resultAllManager
                     });
             }
-            return Ok(result);
+
+            List<object> modifiedResults = new List<object>();
+
+            foreach (var item in resultAllManager)
+            {
+                var employeeName = _userService.SGetById(item.EmployeID).UserName;
+
+                var modifiedItem = new
+                {
+                    item.ID,
+                    item.EmployeID,
+                    item.ManagerID,
+                    item.TimeOffType,
+                    item.Description,
+                    item.StartDate,
+                    item.EndDate,
+                    employeeName 
+                };
+                modifiedResults.Add(modifiedItem);
+            }
+
+            return Ok(modifiedResults);
         }
+
+
         [HttpPut("updateTimeOff-Rejected/{id}")]
         public IActionResult TimeOffUpdateRejected([FromRoute] int id)
         {
@@ -95,13 +116,13 @@ namespace Time_Off_Tracker.API.Controllers
             return Ok("TimeOffType Güncellendi");
         }
 
+
         [HttpPut("updateTimeOff-Accept/{id}")]
         public IActionResult TimeOffUpdateAccept([FromRoute] int id)
         {
             _permissionService.TimeOffTypeUpdate(id, "Accept");
             return Ok("TimeOffType Güncellendi");
         }
-
 
 
         [HttpGet("getallemployee/{id}")]
@@ -182,7 +203,6 @@ namespace Time_Off_Tracker.API.Controllers
                 return Ok(result.Item2);
             }
             return BadRequest(result.Item2);
-
         }
     }
 }

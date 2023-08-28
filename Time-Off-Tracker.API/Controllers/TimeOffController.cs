@@ -133,7 +133,7 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpGet("getallaccept")]
+        [HttpGet("getallaccept/{date}")]
         public IActionResult GetAllAccept(DateTime date)
         {
             var accepts = _permissionService.GetAllAccept(date);
@@ -146,7 +146,7 @@ namespace Time_Off_Tracker.API.Controllers
         }
 
 
-        [HttpGet("getallrejected")]
+        [HttpGet("getallrejected/{date}")]
         public IActionResult GetAllRejected(DateTime date)
         {
             var rejecteds = _permissionService.GetAllRejected(date);

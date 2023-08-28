@@ -142,7 +142,29 @@ namespace Time_Off_Tracker.API.Controllers
             {
                 return Ok("Bu tarihte izinli kimse yok!");
             }
-            return Ok(accepts);
+
+
+            List<object> modifiedResults = new List<object>();
+            foreach (var accept in accepts)
+            {
+                var employeeName = _userService.SGetById(accept.EmployeID).UserName;
+                var managerName = _userService.SGetById(accept.ManagerID).UserName;
+
+                var modifiedItem = new
+                {
+                    accept.ID,
+                    accept.EmployeID,
+                    employeeName,
+                    accept.ManagerID,
+                    managerName,
+                    accept.TimeOffType,
+                    accept.Description,
+                    accept.StartDate,
+                    accept.EndDate
+                };
+                modifiedResults.Add(modifiedItem);
+            }
+            return Ok(modifiedResults);
         }
 
 

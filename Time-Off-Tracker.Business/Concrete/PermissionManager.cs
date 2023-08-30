@@ -76,12 +76,12 @@ namespace Time_Off_Tracker.Business.Concrete
 
         public List<Permission> GetAllAccept(DateTime date)
         {
-            return _permissionDal.GetList(p => p.StartDate <= date && p.EndDate >= date && p.TimeOffType == "Accept").ToList();
+            return _permissionDal.GetList(p => p.StartDate <= date.Date && p.EndDate >= date.Date && p.TimeOffType == "Accept").ToList();
         }
         
         public List<Permission> GetAllRejected(DateTime date)
         {
-            return _permissionDal.GetList(p => p.StartDate <= date && p.EndDate >= date && p.TimeOffType == "Rejected").ToList();
+            return _permissionDal.GetList(p => p.StartDate <= date.Date && p.EndDate >= date.Date && p.TimeOffType == "Rejected").ToList();
         }
     }
 }

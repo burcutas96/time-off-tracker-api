@@ -46,7 +46,7 @@ namespace Time_Off_Tracker.API.Controllers
                     UserLastName = userForRegisterDto.UserLastName,
                     UserEmail = userForRegisterDto.UserEmail,
                     UserPassword = userForRegisterDto.UserPassword,
-                    UserCreateDate = DateTime.Now,
+                    UserCreateDate = DateTime.Now.ToUniversalTime(),
                     UserRole = "Employee",
                     UserStatus = true
                 };

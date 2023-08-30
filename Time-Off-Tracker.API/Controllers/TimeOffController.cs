@@ -237,7 +237,7 @@ namespace Time_Off_Tracker.API.Controllers
                 EndDate = permissionDto.EndDate,
                 TimeOffType = "Pending"
             };
-            user.RamainingDayOff -= number;
+            user.RamainingDayOff -= number; 
             _userService.SUpdate(user);
 
             var result = _permissionService.SInsertPermission(permission);

@@ -1,19 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Time_Off_Tracker.Entity.Concrete;
 
 namespace Time_Off_Tracker.DAL.Concrete
 {
     public class ApiContext:DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApiContext(DbContextOptions options) : base(options)
+        {}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=time-off-tracker-database.cl7uvv8utzfs.eu-north-1.rds.amazonaws.com; Database=time-off-tracker; User Id=sa; Password=database123; TrustServerCertificate=true");
+            modelBuilder.Entity<Permission>()
+                .Property(p => p.StartDate)
+                .HasColumnType("timestamp");
+
+            modelBuilder.Entity<Permission>()
+                .Property(p => p.EndDate)
+                .HasColumnType("timestamp");
         }
+
         public DbSet<User> Users { get; set; }
         public DbSet<Permission> Permissions { get; set; }
     }

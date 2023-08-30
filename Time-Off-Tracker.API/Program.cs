@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -10,7 +11,11 @@ using Time_Off_Tracker.DAL.Concrete;
 using Time_Off_Tracker.DAL.Entity;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ApiContext>();
+
+var str = builder.Configuration.GetConnectionString("ApiDb");
+builder.Services.AddDbContext<ApiContext>(
+    c => c.UseNpgsql(builder.Configuration.GetConnectionString("ApiDb"))
+);
 
 // Add services to the container.
 builder.Services.AddScoped<IUserDal, EfUserDal>();
